@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+@media screen {
+  .printable { display: none;}
+  .non-printable { display: block;}
+}
+@media print {
+  .non-printable { display: none;}
+  .printable { display: block;}
+}
