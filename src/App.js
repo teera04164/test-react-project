@@ -11,9 +11,9 @@ class App extends Component {
 
 	}
 
-	printPreview =async () => {
-		
-		const template =await genHTML()
+	printPreview = async () => {
+
+		const template = await genHTML()
 		$('.printable').html(template)
 		window.print()
 	}
@@ -21,64 +21,68 @@ class App extends Component {
 	componentDidMount = async () => {
 		const template = await genHTML()
 		// console.log(template)
-		
+
 		$('.printable').html(template)
 	}
 	render() {
 		return (
 			<div>
 				<div class="non-printable">
-					<div className="d-flex" id="wrapper">
-						{/* Sidebar */}
-						<div className="bg-light border-right" id="sidebar-wrapper">
-							<div className="list-group list-group-flush">
-								<a href="#" className="list-group-item list-group-item-action bg-light">Dashboard</a>
-								<a href="#" className="list-group-item list-group-item-action bg-light">Shortcuts</a>
-								<a href="#" className="list-group-item list-group-item-action bg-light">Overview</a>
-								<a href="#" className="list-group-item list-group-item-action bg-light">Events</a>
-								<a href="#" className="list-group-item list-group-item-action bg-light">Profile</a>
-								<a href="#" className="list-group-item list-group-item-action bg-light">Status</a>
-							</div>
-						</div>
-						<div id="page-content-wrapper">
-							<nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-
-								<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-									<span className="navbar-toggler-icon" />
-								</button>
-								<div className="collapse navbar-collapse" id="navbarSupportedContent">
-									<ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-										<li className="nav-item active">
-											<a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-										</li>
-										<li className="nav-item">
-											<a className="nav-link" href="#">Link</a>
-										</li>
-										<li className="nav-item dropdown">
-											<a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												Dropdown
-            </a>
-											<div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-												<a className="dropdown-item" href="#">Action</a>
-												<a className="dropdown-item" href="#">Another action</a>
-												<div className="dropdown-divider" />
-												<a className="dropdown-item" href="#">Something else here</a>
-											</div>
-										</li>
-									</ul>
-								</div>
+					<div class="container">
+						<div class="header clearfix">
+							<nav>
+								<ul class="nav nav-pills float-right">
+									<li class="nav-item">
+										<a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">About</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">Contact</a>
+									</li>
+								</ul>
 							</nav>
-							<div className="container-fluid">
-								<h1 className="mt-4" style={{textAlign : "center"}}> <button className="btn btn-primary" id="menu-toggle" onClick={this.printPreview}>print</button></h1>
+							<h3 class="text-muted">Project name</h3>
+						</div>
+
+						<div class="jumbotron">
+							<h1 class="display-3">Jumbotron heading</h1>
+							<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+							<p><a class="btn btn-lg btn-primary" href="#" style = {{width : "100%"}} onClick = {this.printPreview}>Print Invoice</a></p>
+						</div>
+
+						<div class="row marketing">
+							<div class="col-lg-6">
+								<h4>Subheading</h4>
+								<p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+								<h4>Subheading</h4>
+								<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+								<h4>Subheading</h4>
+								<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+							</div>
+
+							<div class="col-lg-6">
+								<h4>Subheading</h4>
+								<p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+								<h4>Subheading</h4>
+								<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+								<h4>Subheading</h4>
+								<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
 							</div>
 						</div>
-						{/* /#page-content-wrapper */}
+
+					
+
 					</div>
 
 				</div>
 
-				<div class="printable">
-				</div>
+				<div class="printable"></div>
 			</div>
 
 		);
