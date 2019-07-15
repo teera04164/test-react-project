@@ -19,57 +19,57 @@ export const data = {
     },
     detail : [
         {
-            installationAddress : " เอ็มโพเรียม ทาวเวอร์วงจร MPLS Private VPN65 - คลองตัน คลองเตย กรุงเทพมหานคร ",
-            Media : "Fiber",
+            installationAddress : " เอ็มโพเรียddddddddddddddddddddddddddddddddddddddddddddddddddddม ทาวเวอร์วงจร MPLS Private VPN65 - คลองตัน คลองเตย กรุงเทพมหานคร ",
+            media : "Fiber",
             Speed : 40,
             routerName : "Cisco 2821RF",
             price : "20000"
         },
         {
             installationAddress : " เอ็มโพเรียม ทาวเวอร์วงจร MPLS Private VPN65 - คลองตัน คลองเตย กรุงเทพมหานคร ",
-            Media : "Fiber",
+            media : "Fiber",
             Speed : 40,
             routerName : "Cisco 2821RF",
             price : "20000"
         },
         {
             installationAddress : " เอ็มโพเรียม ทาวเวอร์วงจร MPLS Private VPN65 - คลองตัน คลองเตย กรุงเทพมหานคร ",
-            Media : "Fiber",
+            media : "Fiber",
             Speed : 40,
             routerName : "Cisco 2821RF",
             price : "20000"
         },
         {
             installationAddress : " เอ็มโพเรียม ทาวเวอร์วงจร MPLS Private VPN65 - คลองตัน คลองเตย กรุงเทพมหานคร ",
-            Media : "Fiber",
+            media : "Fiber",
             Speed : 40,
             routerName : "Cisco 2821RF",
             price : "20000"
         },
         {
             installationAddress : " เอ็มโพเรียม ทาวเวอร์วงจร MPLS Private VPN65 - คลองตัน คลองเตย กรุงเทพมหานคร ",
-            Media : "Fiber",
+            media : "Fiber",
             Speed : 40,
             routerName : "Cisco 2821RF",
             price : "20000"
         },
         {
             installationAddress : " เอ็มโพเรียม ทาวเวอร์วงจร MPLS Private VPN65 - คลองตัน คลองเตย กรุงเทพมหานคร ",
-            Media : "Fiber",
+            media : "Fiber",
             Speed : 40,
             routerName : "Cisco 2821RF",
             price : "20000"
         },
         {
             installationAddress : " เอ็มโพเรียม ทาวเวอร์วงจร MPLS Private VPN65 - คลองตัน คลองเตย กรุงเทพมหานคร ",
-            Media : "Fiber",
+            media : "Fiber",
             Speed : 40,
             routerName : "Cisco 2821RF",
             price : "20000"
         },
         {
             installationAddress : " เอ็มโพเรียม ทาวเวอร์วงจร MPLS Private VPN65 - คลองตัน คลองเตย กรุงเทพมหานคร ",
-            Media : "Fiber",
+            media : "Fiber",
             Speed : 40,
             routerName : "Cisco 2821RF",
             price : "20000"

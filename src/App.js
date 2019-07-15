@@ -11,16 +11,16 @@ class App extends Component {
 
 	}
 
-	printPreview = () => {
+	printPreview =async () => {
 		
-		const template = genHTML()
+		const template =await genHTML()
 		$('.printable').html(template)
 		window.print()
 	}
 
 	componentDidMount = async () => {
-		const template = genHTML()
-		console.log(template);
+		const template = await genHTML()
+		// console.log(template)
 		
 		$('.printable').html(template)
 	}

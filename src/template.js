@@ -1,195 +1,42 @@
 // import logo from './true.jpg'
 import { data } from './data'
 
-export const genHTML = (v1, v2, v3) => {
-    console.log(data);
-    
-    let h = `<html>
-  <head>
-      <style>
-          @font-face {
-              font-family: SourceSansPro;
-              src: url(SourceSansPro-Regular.ttf);
-          }
-  
-          body {
-              -webkit-print-color-adjust: exact !important;
-          }
-  
-           .hhh {
-              position: relative;
-              width: 21cm;
-              height: 29.7cm;
-              margin: 0 auto;
-              color: hsl(0, 0%, 0%);
-              background: #FFFFFF;
-              /* font-family: Arial, sans-serif; */
-              /* font-size: 14px; */
-              /* font-family: SourceSansPro; */
-          }
-  
-          header {
-              padding: 10px 0;
-          }
-  
-          #logo {
-              float: left;
-              margin-top: 20px;
-          }
-  
-          #logo img {
-              height: 40px;
-          }
-  
-          #company {
-              float: left;
-              text-align: left;
-              margin-left: 20px
-          }
-  
-          #address {
-              font-family: Arial, sans-serif;
-              font-size: 12px;
-              
-              font-weight: inherit;
-          }
-  
-  
-          #details {
-              margin-bottom: 50px;
-          }
-  
-          #client {
-              padding-left: 6px;
-              border-left: 6px solid #0087C3;
-              float: left;
-          }
-  
-          #client .to {
-              color: #777777;
-          }
-  
-          h2.name {
-              font-size: 1em;
-              font-weight: bold;
-              margin: 0;
-          }
-  
-          h2.name-th {
-              font-size: 0.8em;
-              font-weight: bold;
-              margin: 0;
-          }
-  
-          #invoice {
-              float: right;
-              text-align: right;
-          }
-  
-          #invoice h1 {
-              color: #0087C3;
-              font-size: 2.4em;
-              line-height: 1em;
-              font-weight: normal;
-              margin: 0 0 10px 0;
-          }
-  
-          #invoice .date {
-              font-size: 1.1em;
-              color: #777777;
-          }
-  
-          #thanks {
-              font-size: 2em;
-              margin-bottom: 50px;
-          }
-  
-          #notices {
-              padding-left: 6px;
-              border-left: 6px solid #0087C3;
-          }
-  
-          #notices .notice {
-              font-size: 1.2em;
-          }
-  
-          footer {
-              color: #777777;
-              width: 100%;
-              height: 30px;
-              position: absolute;
-              bottom: 0;
-              border-top: 1px solid #AAAAAA;
-              padding: 8px 0;
-              text-align: center;
-          }
-  
-          #fax {
-              font-size: 12px;
-              font-weight: inherit;
-              text-align: right !important;
-          }
-  
-          #div-fax {
-              margin-top: 20px;
-          }
-  
-          #table-Quotation {
-              border: 1px solid black;
-              background: rgb(255, 0, 0);
-              text-align: center;
-              font-weight: bold;
-              color: #FFFFFF
-          }
-  
-          .table-prepare td {
-              vertical-align: bottom
-          }
-  
-          .table-ref table {
-              border-collapse: collapse;
-          }
-  
-          td.border-left-bottom {
-              margin-top: 100px;
-              border-left: solid 1px #000;
-              font-size: 11px;
-          }
-  
-          td.border-left-bottom-price {
-              border-left: solid 1px #000;
-              border-right: solid 1px #000;
-              font-size: 11px;
-          }
-  
-          tr.border-header {
-              border: solid 1px #000;
-              font-size: 11px;
-          }
-      </style>
-  </head>
-  
-  <body class="hhh">
-      <header class="clearfix">
-          <div id="logo">
-              <img src="./true.jpg">
-          </div>
-          <div id="company">
-              <h2 class="name">True Internet Corporation Co., Ltd.</h2>
-              <h2 class="name-th">บริษัท ทรูอินเทอรเน็ต คอร์ปอเรชั่น จำกัด</h2>
-              
-              <div id="address" style="margin-top : 10px">18 อาคาร ทรูทาวเวอร์ ถนนรัชดาภิเษก แขวงห้วยขวาง เขตห้วยขวาง กรุงเทพมหานคร 10310</div>
-              <div id="address">18 True Tower, Ratchadapisek road, Huai Kwang Bangkok 10310</div>
-  
-          </div>
-          <div id="div-fax">
-              <div id="fax">เลขที่ผู้เสียภาษี : 0105549025026 </div>
-              <div id="fax">Telephone : (+66) 2643 1111 </div>
-              <div id="fax">Fax : (+66) 2643 1651 </div>
-          </div>
-  
-          </div>
-      </header>
+export const genHTML = async (v1, v2, v3) => {
+
+    let detail = data.detail
+    let length = data.detail.length
+    let tableDetail = ''
+    let header = head
+
+    for (let i = 0; i < length; i++) {
+
+        if (i == length - 1) {
+            tableDetail += `<tr style="border: 0;">
+            <td class="border-left-bottom" style="height: 500px">${i + 1}</td>
+            <td class="border-left-bottom" style="text-align: left;font-size: 12px">
+                ${detail[i].installationAddress}</td>
+            <td class="border-left-bottom"> ${detail[i].media}</td>
+            <td class="border-left-bottom">${detail[i].Speed}</td>
+            <td class="border-left-bottom">${detail[i].routerName}</td>
+            <td class="border-left-bottom-price">${detail[i].price}</td>
+        </tr>`
+        }
+        else {
+            tableDetail += `<tr style="border: 0;">
+            <td class="border-left-bottom">${i + 1}</td>
+            <td class="border-left-bottom" style="text-align: left;font-size: 12px">
+                ${detail[i].installationAddress}</td>
+            <td class="border-left-bottom"> ${detail[i].media}</td>
+            <td class="border-left-bottom">${detail[i].Speed}</td>
+            <td class="border-left-bottom">${detail[i].routerName}</td>
+            <td class="border-left-bottom-price">${detail[i].price}</td>
+        </tr>`
+        }
+
+    }
+
+    let template = `<html>
+  ${header}
       <main>
           <div id="table-Quotation">
               Quotation
@@ -206,19 +53,19 @@ export const genHTML = (v1, v2, v3) => {
                       <table class="table-prepare" style="width: 100%">
                           <tr>
                               <td style="text-align: right">Quotation For :</td>
-                              <td style="text-align: left">Private_VPN2</td>
+                              <td style="text-align: left">${data.prepareFor.quotationFor}</td>
                           </tr>
                           <tr>
                               <td style="text-align: right">Attention :</td>
-                              <td style="text-align: left">P</td>
+                              <td style="text-align: left">${data.prepareFor.attention}</td>
                           </tr>
                           <tr>
                               <td style="text-align: right">Contact Number :</td>
-                              <td style="text-align: left">083013012</td>
+                              <td style="text-align: left">${data.prepareFor.contactNumber}</td>
                           </tr>
                           <tr>
                               <td style="text-align: right">Email :</td>
-                              <td style="text-align: left"> Private@PrivateVPN.co.th</td>
+                              <td style="text-align: left">${data.prepareFor.email}</td>
                           </tr>
                       </table>
                   </td>
@@ -231,15 +78,15 @@ export const genHTML = (v1, v2, v3) => {
                           </tr>
                           <tr>
                               <td style="text-align: right">Sales Person :</td>
-                              <td>sirirat</td>
+                              <td>${data.saleRespresentative.salesPerson}</td>
                           </tr>
                           <tr>
                               <td style="text-align: right">Contact Number : </td>
-                              <td>0838003012</td>
+                              <td>${data.saleRespresentative.contactNumber}</td>
                           </tr>
                           <tr>
                               <td style="text-align: right">Email :</td>
-                              <td> Private@PrivateVPN.co.th</td>
+                              <td>${data.saleRespresentative.email}</td>
                           </tr>
   
                       </table>
@@ -267,16 +114,16 @@ export const genHTML = (v1, v2, v3) => {
                   </tr>
                   <tr>
                       <td style="text-align: center;border: 1px solid;">
-                          PDT-20180517-144759630
+                         ${data.quotation.refNo}
                       </td>
                       <td style="text-align: center;border: 1px solid;">
-                          45
+                         ${data.quotation.termOfPayment}
                       </td>
                       <td style="text-align: center;border: 1px solid;">
-                          Excluded
+                      ${data.quotation.valueAddedTax}
                       </td>
                       <td style="text-align: center;border: 1px solid;">
-                          17-May-18
+                      ${data.quotation.quoteDate}
                       </td>
                   </tr>
               </table>
@@ -311,61 +158,7 @@ export const genHTML = (v1, v2, v3) => {
                       <td class="border-left-bottom">Router Name</td>
                       <td class="border-left-bottom"> Price</td>
                   </tr>
-                  <tr style="border: 0;">
-                      <td class="border-left-bottom">1</td>
-                      <td class="border-left-bottom" style="text-align: left;font-size: 12px">
-                          เอ็มโพเรียม ทาวเวอร์
-                          วงจร MPLS Private VPN
-                          65 - คลองตัน คลองเตย กรุงเทพมหานคร</td>
-                      <td class="border-left-bottom"> Fiber</td>
-                      <td class="border-left-bottom">40</td>
-                      <td class="border-left-bottom">Cisco 2821RF</td>
-                      <td class="border-left-bottom-price">20,000</td>
-                  </tr>
-                  <tr style="border: 0;">
-                      <td class="border-left-bottom">2</td>
-                      <td class="border-left-bottom" style="text-align: left;font-size: 12px">
-                          เอ็มโพเรียม ทาวเวอร์
-                          วงจร MPLS Private VPN
-                          65 - คลองตัน คลองเตย กรุงเทพมหานคร</td>
-                      <td class="border-left-bottom"> Fiber</td>
-                      <td class="border-left-bottom">40</td>
-                      <td class="border-left-bottom">Cisco 2821RF</td>
-                      <td class="border-left-bottom-price">20,000</td>
-                  </tr>
-                  <tr style="border: 0;">
-                      <td class="border-left-bottom">3</td>
-                      <td class="border-left-bottom" style="text-align: left;font-size: 12px">
-                          เอ็มโพเรียม ทาวเวอร์
-                          วงจร MPLS Private VPN
-                          65 - คลองตัน คลองเตย กรุงเทพมหานคร</td>
-                      <td class="border-left-bottom"> Fiber</td>
-                      <td class="border-left-bottom">40</td>
-                      <td class="border-left-bottom">Cisco 2821RF</td>
-                      <td class="border-left-bottom-price">20,000</td>
-                  </tr>
-                  <tr style="border: 0;">
-                      <td class="border-left-bottom">4</td>
-                      <td class="border-left-bottom" style="text-align: left;font-size: 12px">
-                          เอ็มโพเรียม ทาวเวอร์
-                          วงจร MPLS Private VPN
-                          65 - คลองตัน คลองเตย กรุงเทพมหานคร</td>
-                      <td class="border-left-bottom"> Fiber</td>
-                      <td class="border-left-bottom">40</td>
-                      <td class="border-left-bottom">Cisco 2821RF</td>
-                      <td class="border-left-bottom-price">20,000</td>
-                  </tr>
-                  <tr style="border: 0;">
-                      <td valign="top" class="border-left-bottom" style="height: 400px">5</td>
-                      <td valign="top" class="border-left-bottom" style="text-align: left;font-size: 12px">
-                          เอ็มโพเรียม ทาวเวอร์
-                          วงจร MPLS Private VPN
-                          65 - คลองตัน คลองเตย กรุงเทพมหานคร</td>
-                      <td valign="top" class="border-left-bottom"> Fiber</td>
-                      <td valign="top" class="border-left-bottom">40</td>
-                      <td valign="top" class="border-left-bottom">Cisco 2821RF</td>
-                      <td valign="top" class="border-left-bottom-price">20,000</td>
-                  </tr>
+                 ${tableDetail}
                   <tr style="border: solid 1px #000;background: rgb(187, 186, 186)">
                       <td colspan="5"> Total amount excluded VAT </td>
                       <td class="border-left-bottom-price">100000</td>
@@ -435,16 +228,204 @@ export const genHTML = (v1, v2, v3) => {
                   <td>Please kindly sign to proceed with formal application</td>
               </tr>
               <tr>
-                  <td style="border: 1px solid"><br /><br /><span>(&emsp;&emsp;ddddddddd&emsp13;&emsp;)</span><br />Sales/Sr. Account Executive</td>
-                  <td style="border: 1px solid"><br /><br /><span>(&emsp;&emsp;ddddddddd&emsp13;&emsp;)</span><br /> Assistant Director</td>
+                  <td style="border: 1px solid"><br /><br /><span>(&emsp;&emsp;${data.saleRespresentative.salesPerson}&emsp13;&emsp;)</span><br />Sales/Sr. Account Executive</td>
+                  <td style="border: 1px solid"><br /><br /><span>(&emsp;&emsp;${data.prepareFor.quotationFor }&emsp13;&emsp;)</span><br /> Assistant Director</td>
                   <td><br /><br /><span>(&emsp;&emsp;P&emsp13;&emsp;)</span> <br /> Date ………/………/……… </td>
                   </td>
               </tr>
           </table>
-          <br />
+         
   </body>
   
   </html>`
 
-    return h;
+    return template;
 }
+
+const head = `<head>
+<style>
+    @font-face {
+        font-family: SourceSansPro;
+        src: url(SourceSansPro-Regular.ttf);
+    }
+
+    body {
+        -webkit-print-color-adjust: exact !important;
+    }
+
+     .hhh {
+        position: relative;
+        width: 21cm;
+        height: 29.7cm;
+        margin: 0 auto;
+        color: hsl(0, 0%, 0%);
+        background: #FFFFFF;
+        /* font-family: Arial, sans-serif; */
+        /* font-size: 14px; */
+        /* font-family: SourceSansPro; */
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    #logo {
+        float: left;
+        margin-top: 20px;
+    }
+
+    #logo img {
+        height: 40px;
+    }
+
+    #company {
+        float: left;
+        text-align: left;
+        margin-left: 20px
+    }
+
+    #address {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        
+        font-weight: inherit;
+    }
+
+
+    #details {
+        margin-bottom: 50px;
+    }
+
+    #client {
+        padding-left: 6px;
+        border-left: 6px solid #0087C3;
+        float: left;
+    }
+
+    #client .to {
+        color: #777777;
+    }
+
+    h2.name {
+        font-size: 1em;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    h2.name-th {
+        font-size: 0.8em;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    #invoice {
+        float: right;
+        text-align: right;
+    }
+
+    #invoice h1 {
+        color: #0087C3;
+        font-size: 2.4em;
+        line-height: 1em;
+        font-weight: normal;
+        margin: 0 0 10px 0;
+    }
+
+    #invoice .date {
+        font-size: 1.1em;
+        color: #777777;
+    }
+
+    #thanks {
+        font-size: 2em;
+        margin-bottom: 50px;
+    }
+
+    #notices {
+        padding-left: 6px;
+        border-left: 6px solid #0087C3;
+    }
+
+    #notices .notice {
+        font-size: 1.2em;
+    }
+
+    footer {
+        color: #777777;
+        width: 100%;
+        height: 30px;
+        position: absolute;
+        bottom: 0;
+        border-top: 1px solid #AAAAAA;
+        padding: 8px 0;
+        text-align: center;
+    }
+
+    #fax {
+        font-size: 12px;
+        font-weight: inherit;
+        text-align: right !important;
+    }
+
+    #div-fax {
+        margin-top: 20px;
+    }
+
+    #table-Quotation {
+        border: 1px solid black;
+        background: rgb(255, 0, 0);
+        text-align: center;
+        font-weight: bold;
+        color: #FFFFFF
+    }
+
+    .table-prepare td {
+        vertical-align: bottom
+    }
+
+    .table-ref table {
+        border-collapse: collapse;
+    }
+
+    td.border-left-bottom {
+        margin-top: 100px;
+        border-left: solid 1px #000;
+        font-size: 11px;
+        vertical-align: top;
+    }
+
+    td.border-left-bottom-price {
+        border-left: solid 1px #000;
+        border-right: solid 1px #000;
+        font-size: 11px;
+        vertical-align: top;
+    }
+
+    tr.border-header {
+        border: solid 1px #000;
+        font-size: 11px;
+    }
+</style>
+</head>
+
+<body class="hhh">
+<header class="clearfix">
+    <div id="logo">
+        <img src="./true.jpg">
+    </div>
+    <div id="company">
+        <h2 class="name">True Internet Corporation Co., Ltd.</h2>
+        <h2 class="name-th">บริษัท ทรูอินเทอรเน็ต คอร์ปอเรชั่น จำกัด</h2>
+        
+        <div id="address" style="margin-top : 10px">18 อาคาร ทรูทาวเวอร์ ถนนรัชดาภิเษก แขวงห้วยขวาง เขตห้วยขวาง กรุงเทพมหานคร 10310</div>
+        <div id="address">18 True Tower, Ratchadapisek road, Huai Kwang Bangkok 10310</div>
+
+    </div>
+    <div id="div-fax">
+        <div id="fax">เลขที่ผู้เสียภาษี : 0105549025026 </div>
+        <div id="fax">Telephone : (+66) 2643 1111 </div>
+        <div id="fax">Fax : (+66) 2643 1651 </div>
+    </div>
+
+    </div>
+</header>`
